@@ -9,8 +9,7 @@ Sendcloud::send('test@test.com','来自SendCloud的第一封邮件!','你太棒�
 
 #Installation
 
-Require this package in your `composer.json` and update composer. This will download the package and PHPExcel of PHPOffice.
-
+Require this package in your `composer.json` and update composer. This will download the package.
 ```php
 "zjango/sendcloud":"dev-master"
 ```
