@@ -25,7 +25,7 @@ After updating composer, add the ServiceProvider to the providers array in `app/
 You can use the facade for shorter code. Add this to your aliases:
 
 ```php
-		'Sendcloud' 			=> 'Zjango\Sendcloud\Facades\SendcloudClass',
+'Sendcloud' 		=> 'Zjango\Sendcloud\Facades\SendcloudClass',
 ```
 Update config 
 
