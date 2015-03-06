@@ -47,5 +47,4 @@ class Sendcloud{
         $result = file_get_contents($url, false, $context);
         return $result;
     }
-    
 }
