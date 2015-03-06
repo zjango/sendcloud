@@ -10,7 +10,7 @@ class SendcloudServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        require_once(dirname(dirname(__DIR__)).'/config/sendcloud.php');
+
     }
 
     public function register()

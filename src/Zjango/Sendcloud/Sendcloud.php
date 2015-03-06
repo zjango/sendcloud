@@ -26,12 +26,13 @@ class Sendcloud{
 
     public function doSend($to,$subject,$content)
     {
+        $sendcloud_config=\Config::get('mail.sendcloud');
         $url = 'http://sendcloud.sohu.com/webapi/mail.send.json';
         $param = array(
-            'api_user' => SENDCLOUD_API_USER,
-            'api_key' => SENDCLOUD_API_KEY,
-            'from' => SENDCLOUD_FROM_ADDR,
-            'fromname' => SENDCLOUD_FROM_NAME,
+            'api_user' => $sendcloud_config['api_user'],
+            'api_key' => $sendcloud_config['api_key'],
+            'from' => $sendcloud_config['from_addr'],
+            'fromname' => $sendcloud_config['from_name'],
             'to' => $to,
             'subject' => $subject,
             'html' => $content

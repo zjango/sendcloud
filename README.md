@@ -27,10 +27,18 @@ You can use the facade for shorter code. Add this to your aliases:
 ```php
 'Sendcloud' 		=> 'Zjango\Sendcloud\Facades\SendcloudClass',
 ```
-Update config 
+Add config 
 
-update config in src/config/sendcloud.php
-
+update file app/config/mail.php
+add config
+```php
+	'sendcloud'=>array(	
+		'api_user'=>'Sendcloud的api_user',		
+		'api_key'=>'Sendcloud的api_key',
+		'from_addr'=>'发信地址',
+		'from_name'=>'服务',
+	),
+```
 # License
 
 This package is licensed under LGPL. You are free to use it in personal and commercial projects. The code can be forked and modified, but the original copyright author should always be included!
