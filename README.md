@@ -8,7 +8,7 @@ Sendcloud::send('test@test.com','来自SendCloud的第一封邮件!','你太棒�
 ```
 发送视图
 ```php
-Sendcloud::send('test@test.com','来自SendCloud的第一封邮件!',(string)(View::make('test');
+Sendcloud::send('test@test.com','来自SendCloud的第一封邮件!',(string)(View::make('test')));
 ```
 #Installation
 
@@ -46,7 +46,7 @@ Q:这个doSend($to,$subject,$content)中$content能否是一个view呢
 
 A:需要(string)转换一下.另外邮件发送函数为send. 发送View视图实例为
 ```php
-Sendcloud::send('test@test.com','来自SendCloud的第一封邮件!',(string)(View::make('test');
+Sendcloud::send('test@test.com','来自SendCloud的第一封邮件!',(string)(View::make('test')));
 ```
 # License
 
