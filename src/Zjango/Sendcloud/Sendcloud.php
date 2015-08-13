@@ -39,7 +39,7 @@ class Sendcloud{
         return 0;
     }
 
-    public function doSend($to,$subject,$content,$filePath='')
+    public function doSend($to,$subject,$content,$filePath)
     {
         $sendcloud_config=\Config::get('mail.sendcloud');
         $ch = curl_init();
@@ -52,7 +52,7 @@ class Sendcloud{
             'subject' => $subject,
             'html' => $content
         );
-        if(!empty($filePath))
+        if(!is_null($filePath))
         {
             if (class_exists('\CURLFile')) {
                 curl_setopt($ch, CURLOPT_SAFE_UPLOAD, true);
@@ -64,10 +64,10 @@ class Sendcloud{
 
             if (class_exists('\CURLFile')) {
                 $files = new \CURLFile(realpath($filePath));
+                $files->postname=basename($filePath);
             } else {
-                $files = '@' . realpath($filePath);
+                $files = '@' . realpath($filePath).';filename='.basename($filePath);
             }
-            $files->postname=basename($filePath);
             $param['files']=$files;
         }
 
