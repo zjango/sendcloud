@@ -3,8 +3,11 @@ namespace Zjango\Sendcloud;
 
 class Sendcloud{
 
-    public function send($to = [],$subject = null,$content = null,$file=null)
+    public function send($to = array(),$subject = null,$content = null,$file=null)
     {
+        if(!is_array($to)){
+            $to=array($to);
+        }
         if($res = self::checkData($to,$subject,$content)){
             return $res;
         }else{
