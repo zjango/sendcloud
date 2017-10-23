@@ -10,16 +10,18 @@ class SendcloudServiceProvider extends ServiceProvider
 
     public function boot()
     {
-
+        \Auth::provider('sendcloud', function ($app) {
+            return new Sendcloud();
+        });
     }
 
     public function register()
     {
-        $this->app['sendcloud'] = $this->app->share(
-            function ($app) {
-                return new \Zjango\Sendcloud\Sendcloud();
-            }
-        );
+        // $this->app['sendcloud'] = $this->app->share(
+        //     function ($app) {
+        //         return new \Zjango\Sendcloud\Sendcloud();
+        //     }
+        // );
 
         $this->app->booting(
             function () {
